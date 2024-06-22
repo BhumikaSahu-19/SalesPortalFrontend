@@ -17,7 +17,7 @@ const EditLead = () => {
   let leadId = useParams();
 
   useEffect(()=>{
-    axios.get(`http://localhost:3333/edit/${leadId.id}`)
+    axios.get(`https://salesportalserver-1.onrender.com/edit/${leadId.id}`)
     .then((resp)=>{ 
       setFirstName(resp.data.leadFirstName)
       setLastName(resp.data.leadLastName)
@@ -49,7 +49,7 @@ const EditLead = () => {
     };
 
     try {
-      await axios.put(`http://localhost:3333/submit/${leadId.id}`, formData);
+      await axios.put(`https://salesportalserver-1.onrender.com/submit/${leadId.id}`, formData);
       console.log("Lead updated successfully");
       navigate("/sales-lead");
     } catch (error) {
