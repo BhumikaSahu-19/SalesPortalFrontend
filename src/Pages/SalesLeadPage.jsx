@@ -30,7 +30,7 @@ const SalesLeadPage = () => {
 
   const deleteLead = (id) => {
     axios
-      .delete(`http://localhost:3333/deleteleads/${id}`)
+      .delete(`https://salesportalserver-1.onrender.com/deleteleads/${id}`)
       .then(() => {
         console.log("Lead deleted");
         setLeads((prevLeads) => prevLeads.filter((lead) => lead._id !== id));
