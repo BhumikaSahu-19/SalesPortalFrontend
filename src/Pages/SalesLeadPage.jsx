@@ -21,7 +21,7 @@ const SalesLeadPage = () => {
 
   const fetchLeads = async (userId) => {
     try {
-      const response = await axios.get(`https://salesportalserver-3.onrender.com/leads/${userId}`);
+      const response = await axios.get(`https://salesportalserver-2.onrender.com/leads/${userId}`);
       setLeads(response.data);
     } catch (error) {
       console.log("ERROR fetching leads", error);
@@ -30,7 +30,7 @@ const SalesLeadPage = () => {
 
   const deleteLead = (id) => {
     axios
-      .delete(`https://salesportalserver-3.onrender.com/deleteleads/${id}`)
+      .delete(`https://salesportalserver-2.onrender.com/deleteleads/${id}`)
       .then(() => {
         console.log("Lead deleted");
         setLeads((prevLeads) => prevLeads.filter((lead) => lead._id !== id));
